@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KRP Transports - Safe and reliable Bulk LPG transportation across India since 2002.">
+  <title>About Us | KRP Transports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="About.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+   <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="logo">
+        <img src="../Images/logo.jpeg" alt="KRP Transports logo" class="logo-img">
+        <span class="logo-text"> TRANSPORTS</span>
+      </a>
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="home.html" onclick="closeMobileMenu()" aria-label="Navigate to Home section" data-i18n="home">Home</a></li>
+        <li><a href="About.html" onclick="closeMobileMenu()" aria-label="Navigate to About section" class="active" data-i18n="about">About</a></li>
+        <li><a href="services.html" onclick="closeMobileMenu()" aria-label="Navigate to Services section" data-i18n="services">Services</a></li>
+        <li><a href="Contact.html" onclick="closeMobileMenu()" aria-label="Navigate to Contact section" data-i18n="contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <div class="lang-dropdown">
+          <button class="nav-btn" id="langBtn" aria-label="Change language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span id="langLabel">EN</span>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button data-lang="en" class="active-lang">EN</button>
+            <button data-lang="ta">தமிழ்</button>
+            <button data-lang="hi">हिंदी</button>
+          </div>
+        </div>
+        <button class="nav-btn" id="darkToggle" aria-label="Toggle dark mode">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#" data-i18n="home">Home</a>
+      <a href="About.html" data-i18n="about">About</a>
+      <a href="#services" data-i18n="services">Services</a>
+      <a href="#contact" data-i18n="contact">Contact</a>
+    </div>
+  </nav> 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 data-i18n="heroTitle">About KRP Transports</h1>
+      <p data-i18n="heroSubtitle" >Delivering Energy, Building Trust</p>
+      <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="about">
+    <div class="accordion-group">
+
+      <section class="card">
+        <div class="card-head"><h2 data-i18n="whoWeAre">Who We Are</h2></div>
+        <div class="card-body">
+          <p class="section-subtitle" data-i18n="whoWeAreSubtitle">Delivering Energy, Building Trust</p>
+          <div class="content-grid">
+            <p class="section-text" data-i18n="whoWeAreDesc">KRP Transports was established in 2002...</p>
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" alt="LPG Tanker" class="content-img">
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2 data-i18n="leadershipPrinciples">Leadership Principles</h2></div>
+        <div class="card-body">
+          <div class="principles-grid">
+           <div class="sub">
+  <div class="principle-row">
+
+    <svg width="24" height="24" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="safetyFirst">Safety First</h3>
+      <p class="section-text" data-i18n="safetyFirstDesc"></p>
+    </div>
+
+  </div>
+</div>
+            <div class="sub">
+  <div class="principle-row">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="customerCommitment">Customer Commitment</h3>
+      <p class="section-text" data-i18n="customerCommitmentDesc"></p>
+    </div>
+
+  </div>
+</div>
+           <div class="sub">
+  <div class="principle-row">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="6"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="responsibility">Responsibility and Ownership</h3>
+      <p class="section-text" data-i18n="responsibilityDesc"></p>
+    </div>
+
+  </div>
+</div>
+           <div class="sub">
+  <div class="principle-row">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+      <polyline points="17 6 23 6 23 12"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="continuousImprovement">Continuous Improvement</h3>
+      <p class="section-text" data-i18n="continuousImprovementDesc"></p>
+    </div>
+
+  </div>
+</div>
+            <div class="sub">
+  <div class="principle-row">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 7h5l2 3 2-3h9"/>
+      <path d="M3 17h5l2-3 2 3h9"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="teamwork">Teamwork and Respect</h3>
+      <p class="section-text" data-i18n="teamworkDesc"></p>
+    </div>
+
+  </div>
+</div>
+           <div class="sub">
+  <div class="principle-row">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="8" r="6"/>
+      <path d="M15.5 12.5L17 22l-5-3-5 3 1.5-9.5"/>
+    </svg>
+
+    <div>
+      <h3 data-i18n="reliability">Reliability and Results</h3>
+      <p class="section-text" data-i18n="reliabilityDesc"></p>
+    </div>
+
+  </div>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2 data-i18n="founder">Founder</h2></div>
+        <div class="card-body">
+          <div class="sub">
+            <h3 data-i18n="founderTitle">Founder — Prabakaran K</h3>
+            <div class="founder-row">
+              <img src="IMG_20260419_221403.png" alt="Founder" class="founder-img">
+              <p class="founder-quote" data-i18n="founderDesc"></p>
+            </div>
+          </div>
+          <div class="sub">
+            <h3 data-i18n="mdTitle">Managing Director — Monicharan P</h3>
+            <div class="founder-row">
+              <img src="IMG_2392.JPG.jpeg" alt="Managing Director" class="founder-img">
+              <p class="founder-quote" data-i18n="mdDesc"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="services">
+        <div class="card-head"><h2 data-i18n="ourServices">Our Services</h2></div>
+        <div class="card-body">
+          <div class="sub">
+            <h3 data-i18n="whatWeDo">What We Do</h3>
+            <div class="content-grid">
+              <p class="section-text" data-i18n="whatWeDoDesc"></p>
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" alt="Services" class="content-img">
+            </div>
+          </div>
+          <div class="sub">
+            <h3 data-i18n="coreServices">Core Services</h3>
+            <ul class="check-list">
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="bulkLpg"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="buildingMaterial"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="psuContract"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="safetyLogistics"></span>
+  </li>
+</ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2 data-i18n="whyChooseUs">Why Choose Us</h2></div>
+        <div class="card-body">
+          <div class="sub">
+            <h3 data-i18n="whyChooseUsSubtitle">Uncompromising Safety</h3>
+            <div class="content-grid">
+              <p class="section-text" data-i18n="whyChooseUsDesc"></p>
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Safety" class="content-img">
+            </div>
+          </div>
+          <div class="sub">
+            <h3 data-i18n="keyAdvantages">Key Advantages</h3>
+            <ul class="check-list">
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="bulkLpg"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="buildingMaterial"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <span data-i18n="psuContract"></span>
+  </li>
+
+  <li>
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="9 12 11 15 15 10"/>
+    </svg>
+    <span data-i18n="safetyLogistics"></span>
+  </li>
+</ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Company Section -->
+    <div class="footer-column">
+      <div class="company-info">
+        <h3 class="footer-logo">KRP TRANSPORTS</h3>
+        <p class="footer-description">
+          A specialized logistics company established in 2002 with a proven track record in Bulk LPG transportation and a zero-accident safety record. We are a trusted partner to PSU oil marketing companies like BPCL and IOCL.
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/917200240947" class="social-icon" aria-label="WhatsApp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Website">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Useful Links -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Useful Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#client">Client</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Services -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">PSU Contract Operations</a></li>
+        <li><a href="#">Building Material Supply</a></li>
+        <li><a href="#">LPG Transportation</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Contact Us</h4>
+      <div class="contact-info">
+        <p class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>KRP Transports,<br>Namakkal, Tamil Nadu, India</span>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:+917200240947" style="color: #e0e0e0; text-decoration: none;">+91 7200240947</a></span>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:krptransportsnkl@gmail.com" style="color: #e0e0e0; text-decoration: none;">krptransportsnkl@gmail.com</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>&copy; Copyright Krp Transports All Rights Reserved</p>
+      <!-- <p class="designed-by">Developed by Abithya</p> -->
+    </div>
+  </div>
+</footer>
+
+
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="About.js"></script>
+</body>
+</html>
