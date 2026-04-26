@@ -50,11 +50,16 @@ Future updates will include:
 
 ---
 
-## 👩‍💻 Author
-Abithya 
-Nusarat Khan
-Nandini M
+## 👥 Team Members
 
+- 👩‍💻 **Abithya** 
+  [GitHub Profile](https://github.com/your-username)
+
+- 👨‍💻 **Nusarat Khan**  
+  [GitHub Profile](https://github.com/Nusaratkhan)
+
+- 👨‍💻 **Nandini M** 
+  [GitHub Profile](https://github.com/teammate2)
 ---
 
 ## 📢 Note
