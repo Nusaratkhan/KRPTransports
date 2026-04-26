@@ -31,7 +31,6 @@ This project is built as part of a learning and development process to understan
 ---
 
 ## 📸 Screenshots
-(Add screenshots of your website here)
 
 ---
 
