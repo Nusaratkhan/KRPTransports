@@ -55,8 +55,7 @@ Future updates will include:
 - 👩‍💻 **Abithya** 
   [GitHub Profile](https://github.com/your-username)
 
-- 👨‍💻 **Nusarat Khan**  
-  [GitHub Profile](https://github.com/Nusaratkhan)
+- 👨‍💻 **Nusarat Khan**  [GitHub Profile](https://github.com/Nusaratkhan)
 
 - 👨‍💻 **Nandini M** 
   [GitHub Profile](https://github.com/teammate2)
