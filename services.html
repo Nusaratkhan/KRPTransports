@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRP Transports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="service.css">
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════ -->
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <div class="logo-title" id="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h1>TRANSPORTS</h1>
+    </div>
+
+    <div class="nav-right">
+      <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="home.html" onclick="closeMobileMenu()" aria-label="Navigate to Home section">Home</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()" aria-label="Navigate to About section">About</a></li>
+        <li><a href="services.html" onclick="closeMobileMenu()" aria-label="Navigate to Services section">Services</a></li>
+        <li><a href="Contact.html" onclick="closeMobileMenu()" aria-label="Navigate to Contact section">Contact</a></li>
+      </ul>
+      
+      <!-- Dark/Light Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <span class="theme-icon">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+      </button>
+      
+      <!-- <div id="google_translate_element"></div> -->
+      </div>
+    </div>
+  </div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-tag" data-i18n="hero_tag">Est. 2002 · Zero-Accident Record</div>
+  <h1><span data-i18n="hero_h1a">Trusted Logistics.</span><br><span data-i18n="hero_h1b">Delivered Safely.</span></h1>
+  <p data-i18n="hero_p">Specialised in Bulk LPG transportation and PSU contract operations across India with an unmatched safety record.</p>
+  <button class="hero-btn"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="hero_btn"><a href="Contact.html">Get a Free Quote</a></span></button>
+</section>
+
+<!-- ════════════════ STATS ════════════════ -->
+<div class="stats-bar">
+  <div class="stat-cell"><div class="stat-num">2002</div><div class="stat-lbl" data-i18n="stat_est">Established</div></div>
+  <div class="stat-cell"><div class="stat-num">20+</div><div class="stat-lbl" data-i18n="stat_yrs">Years Experience</div></div>
+  <div class="stat-cell"><div class="stat-num">0</div><div class="stat-lbl" data-i18n="stat_acc">Accidents on Record</div></div>
+  <div class="stat-cell"><div class="stat-num">BPCL · IOCL</div><div class="stat-lbl" data-i18n="stat_psu">PSU Partners</div></div>
+</div>
+
+<!-- ════════════════ SERVICES SECTION ════════════════ -->
+<section id="services">
+
+  <!-- Header -->
+  <div class="sec-header">
+    <div class="sec-tag" data-i18n="sec_tag">   What We Offer</div>
+    <!-- <h2><span data-i18n="sec_h2a">OUR</span> <span data-i18n="sec_h2b">SERVICES</span></h2> -->
+     <h2 class="hidden" style="text-align:center; font-size: 1.8rem; font-weight: 700; color: #a5170d; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px;">our SERVICES</h2>
+
+    <p data-i18n="sec_sub">Reliable, safe and technology-driven logistics solutions tailored for your business.</p>
+  </div>
+
+  <!-- Featured Service Cards (with image) -->
+  <div class="services-wrap">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=70" alt="Freight" loading="lazy" />
+          <div class="card-overlay"><i class="fa-solid fa-truck"></i></div>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="s1_title">Freight Transportation</h3>
+          <p  data-i18n="s1_desc">Multi-modal freight — road, rail, air and sea — across domestic and international routes.</p>
+          <a class="card-link" href="#"><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&q=70" alt="Warehouse" loading="lazy" />
+          <div class="card-overlay"><i class="fa-solid fa-warehouse"></i></div>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="s2_title">Warehousing & Storage</h3>
+          <p  data-i18n="s2_desc">Climate-controlled, secure warehouses with IoT inventory management for seamless fulfilment.</p>
+          <a class="card-link" href="#"><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-img-wrap">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS15oXdCONqIaFuAQACBtOHmaLq3btyWis5YQ&s" alt="Express" loading="lazy" />
+          <div class="card-overlay"><i class="fa-solid fa-bolt"></i></div>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="s3_title">Express Delivery</h3>
+          <p  data-i18n="s3_desc">Same-day and next-day delivery with guaranteed windows and real-time tracking updates.</p>
+          <a class="card-link" href="#"><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="card-img-wrap">
+          <img src="https://mahindralogistics.com/wp-content/uploads/2026/04/Tile-2-465-%C3%97-320.jpg" alt="Express" loading="lazy" />
+          <div class="card-overlay"><i class="fa-solid fa-bolt"></i></div>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="s3_title">Logistic Solutions</h3>
+          <p  data-i18n="s3_desc">Same-day and next-day delivery with guaranteed windows and real-time tracking updates.</p>
+          <a class="card-link" href="#"><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+    
+    <section id="services" class="service-Card"> 
+    <div class="sec-header" style="padding: 56px 0 32px;">
+      <h2 class="hidden" style="text-align:center; font-size: 1.8rem; font-weight: 700; color: #a5170d; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px;">CORE SERVICES</h2>
+    </div>
+    <div class="core-grid">
+ 
+      <div class="core-card">
+        <div class="core-icon"><i class="fa-solid fa-gas-pump"></i></div>
+        <h3 data-i18n="c1_title"><a href="service-detail.html?service=lpg">LPG Transportation</a></h3>
+      </div>
+ 
+      <div class="core-card">
+        <div class="core-icon"><i class="fa-solid fa-truck-loading"></i></div>
+        <h3 data-i18n="c2_title"><a href="service-detail.html?service=buildings">Building Material Supply</a></h3>
+      </div>
+ 
+      <div class="core-card">
+        <div class="core-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <h3 data-i18n="c3_title"><a href="service-detail.html?service=psu">PSU Contract Operations</a></h3>
+      </div>
+ 
+      <div class="core-card">
+        <div class="core-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 data-i18n="c4_title"><a href="service-detail.html?service=safety">Safety-Driven Logistics</a></h3>
+      </div>
+ 
+    </div>
+       </section>
+    <!-- CTA Banner -->
+    <div class="cta-banner" style="margin-top: 64px; margin-bottom: 0;">
+      <div>
+        <h3 data-i18n="cta_h3">Ready to move with us?</h3>
+        <p data-i18n="cta_p">Get a custom logistics plan from our experts within 24 hours.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="btn-primary"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="cta_btn1"><a href="Contact.html">Get a Free Quote</a></span></button>
+        <button class="btn-outline" data-i18n="cta_btn2"><a href="services.html">View All Services</a></button>
+      </div>
+    </div>
+
+  </div><!-- /services-wrap -->
+</section>
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Company Section -->
+    <div class="footer-column">
+      <div class="company-info">
+        <h3 class="footer-logo">KRP TRANSPORTS</h3>
+        <p class="footer-description">
+          A specialized logistics company established in 2002 with a proven track record in Bulk LPG transportation and a zero-accident safety record. We are a trusted partner to PSU oil marketing companies like BPCL and IOCL.
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/917200240947" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36713.58245633309!2d78.20506986435849!3d11.267981223392777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768;4f13.1!3m3!1m2!1s0x3babcf0035b16ce1%3A0xc51b860ea968e0fa!2sKRP%20TRANSPORTS!5e0!3m2!1sen!2sin!4v1776679667869!5m2!1sen!2sin" class="social-icon" target="_blank"><i class="fas fa-globe"></i></a>
+          <a href="https://www.linkedin.com/company/krp-transports" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- Useful Links -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Useful Links</h4>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Services -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">PSU Contract Operations</a></li>
+        <li><a href="#">Building Material Supply</a></li>
+        <li><a href="#">LPG Transportation</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Contact Us</h4>
+      <div class="contact-info">
+        <p class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>KRP Transports, Namakkal, Tamil Nadu, India</span>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+917200240947">+91 7200240947</a>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:krptransportsnkl@gmail.com">krptransportsnkl@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>&copy; Copyright KRP Transports All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════ LANGUAGE SYSTEM ════════════════ -->
+<script>
+// const translations = {
+//   en: {
+//     nav_home:"Home", nav_services:"Services", nav_contact:"Contact",
+//     hero_tag:"Est. 2002 · Zero-Accident Record",
+//     hero_h1a:"Trusted Logistics.", hero_h1b:"Delivered Safely.",
+//     hero_p:"Specialised in Bulk LPG transportation and PSU contract operations across India with an unmatched safety record.",
+//     hero_btn:"Get a Free Quote",
+//     stat_est:"Established", stat_yrs:"Years Experience", stat_acc:"Accidents on Record", stat_psu:"PSU Partners",
+//     sec_tag:"What We Offer", sec_h2a:"Our", sec_h2b:"Services",
+//     sec_sub:"Reliable, safe and technology-driven logistics solutions tailored for your business.",
+//     s1_title:"Freight Transportation", s1_desc:"Multi-modal freight — road, rail, air and sea — across domestic and international routes.",
+//     s2_title:"Warehousing & Storage",  s2_desc:"Climate-controlled, secure warehouses with IoT inventory management for seamless fulfilment.",
+//     s3_title:"Express Delivery",       s3_desc:"Same-day and next-day delivery with guaranteed windows and real-time tracking updates.",
+//     learn_more:"Learn More",
+//     core_h2:"Core Specialisations",
+//     c1_title:"Bulk LPG Transportation", c2_title:"Building Material Supply",
+//     c3_title:"PSU Contract Operations", c4_title:"Safety-Driven Logistics",
+//     cta_h3:"Ready to move with us?", cta_p:"Get a custom logistics plan from our experts within 24 hours.",
+//     cta_btn1:"Get a Free Quote", cta_btn2:"View All Services",
+//     ft_desc:"A specialised logistics company established in 2002 with a proven track record in Bulk LPG transportation and a zero-accident safety record. Trusted partner to BPCL and IOCL.",
+//     ft_links:"Useful Links", ft_about:"About Us", ft_serv_h:"Our Services", ft_contact_h:"Contact Us",
+//     ft_addr:"KRP Transports, Namakkal, Tamil Nadu, India",
+//     ft_copy:"© 2026 KRP Transports. All Rights Reserved."
+//   },
+//   hi: {
+//     nav_home:"होम", nav_services:"सेवाएं", nav_contact:"संपर्क",
+//     hero_tag:"स्थापित 2002 · शून्य-दुर्घटना रिकॉर्ड",
+//     hero_h1a:"विश्वसनीय लॉजिस्टिक्स।", hero_h1b:"सुरक्षित डिलीवरी।",
+//     hero_p:"भारत में बल्क LPG परिवहन और PSU अनुबंध संचालन में विशेषज्ञ — अद्वितीय सुरक्षा रिकॉर्ड के साथ।",
+//     hero_btn:"निःशुल्क कोटेशन पाएं",
+//     stat_est:"स्थापना वर्ष", stat_yrs:"वर्षों का अनुभव", stat_acc:"दुर्घटना रिकॉर्ड", stat_psu:"PSU भागीदार",
+//     sec_tag:"हमारी सेवाएं", sec_h2a:"हमारी", sec_h2b:"सेवाएं",
+//     sec_sub:"आपके व्यवसाय के लिए विश्वसनीय, सुरक्षित और तकनीकी लॉजिस्टिक्स समाधान।",
+//     s1_title:"माल परिवहन", s1_desc:"सड़क, रेल, वायु और समुद्र — घरेलू और अंतर्राष्ट्रीय मार्गों पर बहु-मोडल माल सेवाएं।",
+//     s2_title:"भंडारण और संग्रहण", s2_desc:"IoT इन्वेंट्री प्रबंधन के साथ जलवायु-नियंत्रित, सुरक्षित गोदाम।",
+//     s3_title:"एक्सप्रेस डिलीवरी", s3_desc:"गारंटीड विंडो और रियल-टाइम ट्रैकिंग के साथ उसी दिन और अगले दिन डिलीवरी।",
+//     learn_more:"अधिक जानें",
+//     core_h2:"मुख्य विशेषज्ञताएं",
+//     c1_title:"बल्क LPG परिवहन", c2_title:"भवन निर्माण सामग्री आपूर्ति",
+//     c3_title:"PSU अनुबंध संचालन", c4_title:"सुरक्षा-संचालित लॉजिस्टिक्स",
+//     cta_h3:"हमारे साथ आगे बढ़ने के लिए तैयार हैं?", cta_p:"24 घंटे में हमारे विशेषज्ञों से कस्टम लॉजिस्टिक्स प्लान पाएं।",
+//     cta_btn1:"निःशुल्क कोटेशन पाएं", cta_btn2:"सभी सेवाएं देखें",
+//     ft_desc:"2002 में स्थापित एक विशेषज्ञ लॉजिस्टिक्स कंपनी, बल्क LPG परिवहन में सिद्ध ट्रैक रिकॉर्ड और शून्य-दुर्घटना सुरक्षा रिकॉर्ड के साथ। BPCL और IOCL का विश्वसनीय भागीदार।",
+//     ft_links:"उपयोगी लिंक", ft_about:"हमारे बारे में", ft_serv_h:"हमारी सेवाएं", ft_contact_h:"संपर्क करें",
+//     ft_addr:"KRP ट्रांसपोर्ट्स, नमक्कल, तमिलनाडु, भारत",
+//     ft_copy:"© 2026 KRP ट्रांसपोर्ट्स। सर्वाधिकार सुरक्षित।"
+//   },
+//   ta: {
+//     nav_home:"முகப்பு", nav_services:"சேவைகள்", nav_contact:"தொடர்பு",
+//     hero_tag:"நிறுவப்பட்டது 2002 · விபத்தற்ற சாதனை",
+//     hero_h1a:"நம்பகமான லாஜிஸ்டிக்ஸ்.", hero_h1b:"பாதுகாப்பாக விநியோகம்.",
+//     hero_p:"இந்தியா முழுவதும் பல்க் LPG போக்குவரத்து மற்றும் PSU ஒப்பந்த செயல்பாடுகளில் சிறப்பு — இணையற்ற பாதுகாப்பு சாதனையுடன்.",
+//     hero_btn:"இலவச மேற்கோள் பெறுக",
+//     stat_est:"நிறுவப்பட்டது", stat_yrs:"ஆண்டுகள் அனுபவம்", stat_acc:"விபத்து சாதனை", stat_psu:"PSU கூட்டாளர்கள்",
+//     sec_tag:"எங்கள் சேவைகள்", sec_h2a:"எங்கள்", sec_h2b:"சேவைகள்",
+//     sec_sub:"உங்கள் வணிகத்திற்கு நம்பகமான, பாதுகாப்பான மற்றும் தொழில்நுட்ப லாஜிஸ்டிக்ஸ் தீர்வுகள்.",
+//     s1_title:"சரக்கு போக்குவரத்து", s1_desc:"சாலை, ரயில், வான் மற்றும் கடல் — உள்நாட்டு மற்றும் சர்வதேச வழிகளில் பல-முறை சரக்கு சேவைகள்.",
+//     s2_title:"கிடங்கு மற்றும் சேமிப்பு", s2_desc:"IoT சரக்கு மேலாண்மையுடன் வெப்பநிலை-கட்டுப்படுத்தப்பட்ட, பாதுகாப்பான கிடங்குகள்.",
+//     s3_title:"எக்ஸ்பிரஸ் டெலிவரி", s3_desc:"உத்தரவாத நேரம் மற்றும் நேரடி கண்காணிப்புடன் அதே நாள் மற்றும் அடுத்த நாள் டெலிவரி.",
+//     learn_more:"மேலும் அறிக",
+//     core_h2:"முக்கிய சிறப்பு சேவைகள்",
+//     c1_title:"பல்க் LPG போக்குவரத்து", c2_title:"கட்டிட பொருள் விநியோகம்",
+//     c3_title:"PSU ஒப்பந்த செயல்பாடுகள்", c4_title:"பாதுகாப்பு-கேந்திரிய லாஜிஸ்டிக்ஸ்",
+//     cta_h3:"எங்களுடன் நகர தயாரா?", cta_p:"24 மணி நேரத்தில் எங்கள் நிபுணர்களிடம் தனிப்பயன் திட்டம் பெறுங்கள்.",
+//     cta_btn1:"இலவச மேற்கோள் பெறுக", cta_btn2:"அனைத்து சேவைகளையும் காண்க",
+//     ft_desc:"2002 இல் நிறுவப்பட்ட சிறப்பு லாஜிஸ்டிக்ஸ் நிறுவனம், பல்க் LPG போக்குவரத்தில் நிரூபிக்கப்பட்ட சாதனை மற்றும் விபத்தற்ற பாதுகாப்பு சாதனையுடன். BPCL மற்றும் IOCL இன் நம்பகமான கூட்டாளர்.",
+//     ft_links:"பயனுள்ள இணைப்புகள்", ft_about:"எங்களைப் பற்றி", ft_serv_h:"எங்கள் சேவைகள்", ft_contact_h:"தொடர்பு கொள்ள",
+//     ft_addr:"KRP போக்குவரத்து, நாமக்கல், தமிழ்நாடு, இந்தியா",
+//     ft_copy:"© 2026 KRP போக்குவரத்து. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+//   }
+// };
+
+// function setLang(lang) {
+//   const t = translations[lang];
+//   if (!t) return;
+//   document.querySelectorAll('[data-i18n]').forEach(el => {
+//     const key = el.getAttribute('data-i18n');
+//     if (t[key] !== undefined) el.innerHTML = t[key];
+//   });
+//   document.documentElement.lang = lang;
+//   document.getElementById('langSel').value = lang;
+// }
+
+window.addEventListener("load", function() {
+      document.querySelector(".preloader").style.display = "none";
+    });
+
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const moonIcon = document.querySelector('.icon-moon');
+    const sunIcon = document.querySelector('.icon-sun');
+    const body = document.body;
+    
+    // Load saved theme or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      moonIcon.style.display = 'none';
+      sunIcon.style.display = 'block';
+    }
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = body.classList.toggle('dark-mode');
+      
+      // Update icon visibility based on theme
+      if (isDarkMode) {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+      } else {
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+      }
+      
+      // Save theme preference
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+
+    // Mobile menu functions
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const navbar = document.querySelector('.navbar');
+      
+      navLinks.classList.toggle('mobile-active');
+      navbar.classList.toggle('mobile-menu-open');
+    }
+    
+    function closeMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const navbar = document.querySelector('.navbar');
+      
+      navLinks.classList.remove('mobile-active');
+      navbar.classList.remove('mobile-menu-open');
+    }
+
+/* Scroll-entrance animation */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }, i * 90);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.10 });
+
+document.querySelectorAll('.service-card, .core-card').forEach(c => {
+  c.style.opacity = '0';
+  c.style.transform = 'translateY(24px)';
+  c.style.transition = 'opacity .45s ease, transform .45s ease, box-shadow .28s ease, border-color .28s ease';
+  observer.observe(c);
+});
+
+</script>
+/* <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,ta,te,kn,ml,fr,de,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> */
+
+</body>
+</html>

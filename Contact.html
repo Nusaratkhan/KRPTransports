@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      .goog-te-gadget .goog-te-combo {
+        width: 90px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+        border: none !important;
+        border-radius: 6px !important;
+        background-color: #f8f9fa !important;
+        color: #053047 !important;
+        padding: 6px 8px !important;
+        font-family: 'Raleway', sans-serif !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        min-width: 90px !important;
+        max-width: 90px !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+      }
+
+      .goog-te-gadget .goog-te-combo:hover {
+        background-color: #e9ecef !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+      }
+
+      .goog-te-gadget .goog-te-combo:focus {
+        outline: none !important;
+        background-color: #fff !important;
+        box-shadow: 0 0 0 2px rgba(199, 19, 5, 0.3) !important;
+      }
+
+      /* Hide the "Select Language" text */
+      .goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value span {
+        display: none !important;
+      }
+      
+      /* Style the dropdown arrow */
+      .goog-te-gadget .goog-te-combo::-webkit-scrollbar {
+        width: 6px !important;
+      }
+
+      .goog-te-gadget .goog-te-combo::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+      }
+
+      .goog-te-gadget .goog-te-combo::-webkit-scrollbar-thumb {
+        background: #c71305 !important;
+        border-radius: 3px !important;
+      }
+
+      /* INLINE DARK MODE STYLES - FALLBACK */
+      body.dark-mode {
+        background: linear-gradient(135deg, #0a0a0a 0%, #053047 100%) !important;
+        color: #ffffff !important;
+      }
+
+      body.dark-mode * {
+        color: #ffffff !important;
+      }
+
+      body.dark-mode .navbar {
+        background: linear-gradient(135deg, #0a0a0a 0%, #0a2342 100%) !important;
+      }
+
+      body.dark-mode .contact-hero {
+        background: linear-gradient(135deg, #0a0a0a 0%, #053047 100%) !important;
+      }
+
+      body.dark-mode .apl-form-container {
+        background: linear-gradient(135deg, #0a0a0a 0%, #053047 100%) !important;
+      }
+
+      body.dark-mode .f-control {
+        background: #1a1a1a !important;
+        border: 1px solid #4a5568 !important;
+        color: #ffffff !important;
+      }
+
+      body.dark-mode .footer {
+        background: #1a1a1a !important;
+      }
+
+      body.dark-mode .map-wrapper {
+        background: #1a1a1a !important;
+      }
+    </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="dots">
+      <div></div><div></div><div></div><div></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <div class="logo-title" id="logo">
+      <img src="../Images/logo.jpeg" alt="Logo">
+      <h1>TRANSPORTS</h1>
+    </div>
+
+    <div class="nav-right">
+      <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="home.html" aria-label="Navigate to Home page">Home</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()" aria-label="Navigate to About section">About</a></li>
+        <li><a href="services.html" onclick="closeMobileMenu()" aria-label="Navigate to Services section">Services</a></li>
+        <li><a href="Contact.html" onclick="closeMobileMenu()" aria-label="Navigate to Contact section">Contact</a></li>
+      </ul>
+      
+      <!-- Dark/Light Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" onclick="toggleTheme()">
+        <span class="theme-icon">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+      </button>
+
+      <!-- <div id="google_translate_element"></div> -->
+      </div>
+    </div>
+  </div>
+
+<!-- HERO SECTION -->
+<section class="contact-hero">
+    <!-- <h1>Contact Us</h1> -->
+    <section class="contact-box">
+    <div class="content">
+        <div class="line"></div>
+        <h2>GET IN TOUCH</h2>
+        <p>Contact our logistics team for transport, supply chain and warehouse solutions.</p>
+        <p>For sales inquiry or feedback, please use the form below by selecting the most appropriate topic from the drop-down menu and we will get back to you as soon as possible.</p>
+    </div>
+</section>
+</section>
+ <div class="apl-form-container">
+    <form id="apl-custom-form" method="POST" action="/submit">
+        
+        <div class="f-grid">
+            <div class="f-group">
+                <label>First Name <span class="req">*</span></label>
+               <input type="text" name="firstName" class="f-control" required>
+            </div>
+            <div class="f-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="f-control">
+            </div>
+        </div>
+
+        <div class="f-grid">
+            <div class="f-group">
+                <label>Company Name <span class="req">*</span></label>
+                <input type="text" name="companyName" class="f-control" required>
+            </div>
+            <div class="f-group">
+                <label>Job Title </label>
+                <input type="text" name="jobTitle" class="f-control">
+            </div>
+        </div>
+
+        <div class="f-grid">
+            <div class="f-group">
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="email" class="f-control" required>
+            </div>
+            <div class="f-group">
+                <label>Phone <span class="req">*</span></label>
+                <input type="text" name="phone" class="f-control" required>
+            </div>
+        </div>
+
+        <div class="f-grid">
+            <div class="f-group">
+              <label>State <span class="req">*</span></label>
+
+              <input 
+                type="text" 
+                name="state"
+                class="f-control" 
+                list="Statelist"
+                placeholder="Enter your state"
+                required
+              >
+
+              <datalist id="Statelist">
+                <option value="Tamil Nadu">
+                <option value="Kerala">
+                <option value="Maharashtra">
+                <option value="Uttar Pradesh">
+                <option value="Madhya Pradesh">
+              </datalist>
+           </div>
+             <div class="f-group">
+              <label>City <span class="req">*</span></label>
+
+              <input 
+                class="f-control" 
+                list="cityList"
+                name="city"
+                placeholder="Enter your city"
+                required
+              >
+
+              <datalist id="cityList">
+                <option value="Mumbai">
+                <option value="Delhi">
+                <option value="Chennai">
+                <option value="Bangalore">
+                <option value="Hyderabad">
+              </datalist>
+           </div>
+        </div>
+
+        <div class="f-group">
+            <label>Inquiries <span class="req">*</span></label>
+            <textarea class="f-control f-textarea" name="inquiries" required></textarea>
+        </div>
+
+        <div class="f-group">
+            <label>How did you hear about us? <span class="req">*</span></label>
+            <select class="f-control" name="hearAboutUs" required>
+                <option value="">Please Select</option>
+                <option value="google">Google</option>
+                <option value="social-media">Social Media</option>
+                <option value="referral">Referral</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <button type="submit" class="apl-submit-btn">Submit</button>
+    </form>
+    <!-- FOOTER SECTION -->
+<!-- FOOTER SECTION -->
+ </div>
+<span></span>
+<span></span>
+<section class="map-wrapper">
+
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36713.58245633309!2d78.20506986435849!3d11.267981223392777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babcf0035b16ce1%3A0xc51b860ea968e0fa!2sKRP%20TRANSPORTS!5e0!3m2!1sen!2sin!4v1776679667869!5m2!1sen!2sin"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Company Section -->
+    <div class="footer-column">
+      <div class="company-info">
+        <h3 class="footer-logo">KRP TRANSPORTS</h3>
+        <p class="footer-description">
+          A specialized logistics company established in 2002 with a proven track record in Bulk LPG transportation and a zero-accident safety record. We are a trusted partner to PSU oil marketing companies like BPCL and IOCL.
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/917200240947" class="social-icon" aria-label="WhatsApp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.google.com/maps" class="social-icon" aria-label="Website">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="https://www.linkedin.com/" class="social-icon" aria-label="LinkedIn" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Useful Links -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Useful Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#client">Client</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Services -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">PSU Contract Operations</a></li>
+        <li><a href="#">Building Material Supply</a></li>
+        <li><a href="#">LPG Transportation</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="footer-column">
+      <h4 class="footer-heading">Contact Us</h4>
+      <div class="contact-info">
+        <p class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>KRP Transports,<br>Namakkal, Tamil Nadu, India</span>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:+917200240947" style="color: #e0e0e0; text-decoration: none;">+91 7200240947</a></span>
+        </p>
+        <p class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:krptransportsnkl@gmail.com" style="color: #e0e0e0; text-decoration: none;">krptransportsnkl@gmail.com</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>&copy; Copyright Krp Transports All Rights Reserved</p>
+      <!-- <p class="designed-by">Developed by Abithya</p> -->
+    </div>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById("apl-custom-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  
+  // Map form fields to backend schema
+  const mappedData = {
+    firstName: data.firstName,
+    lastName: data.lastName || '',
+    companyName: data.companyName,
+    jobTitle: data.jobTitle || '',
+    email: data.email,
+    phone: data.phone,
+    state: data.state,
+    city: data.city || '',
+    inquiries: data.inquiries,
+    source: data.hearAboutUs // Map hearAboutUs to source
+  };
+
+  const res = await fetch("http://localhost:5000/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(mappedData)
+  });
+
+  const result = await res.json();
+  
+  if (result.success) {
+    alert('Thank you for your message! We will get back to you soon.');
+    // Reset form
+    document.getElementById("apl-custom-form").reset();
+  } else {
+    alert('Error: ' + result.message);
+  }
+});
+
+// Clean theme toggle function
+function toggleTheme() {
+  const body = document.body;
+  const isDarkMode = body.classList.toggle('dark-mode');
+  
+  // Update icons
+  const moonIcon = document.querySelector('.icon-moon');
+  const sunIcon = document.querySelector('.icon-sun');
+  
+  if (isDarkMode) {
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'block';
+  } else {
+    moonIcon.style.display = 'block';
+    sunIcon.style.display = 'none';
+  }
+  
+  // Save theme preference
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Load saved theme on page load
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.querySelector('.icon-moon').style.display = 'none';
+    document.querySelector('.icon-sun').style.display = 'block';
+  }
+}
+
+function closeMobileMenu() {
+  document.querySelector(".nav-links").classList.remove("active");
+  document.querySelector(".mobile-menu-toggle").classList.remove("active");
+}
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,ta,te,kn,ml,fr,de,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

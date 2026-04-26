@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - KRP Transports</title>
+    <link rel="stylesheet" href="homecss.css">
+    <style>
+        /* Admin Login Specific Styles */
+        .admin-login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color, linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%));
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .admin-login-card {
+            background: var(--card-bg, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color, #e1e5e9);
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--heading-color, #053047);
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .admin-subtitle {
+            font-size: 0.9rem;
+            color: var(--secondary-text, #666666);
+            transition: color 0.3s ease;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-color, #053047);
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color, #e1e5e9);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--input-bg, #ffffff);
+            color: var(--text-color, #053047);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color, #053047);
+            box-shadow: 0 0 0 3px rgba(5, 48, 71, 0.1);
+        }
+
+        .form-input:hover {
+            border-color: var(--hover-color, #0a2342);
+        }
+
+        /* Simple Eye Icon Password Toggle */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-text, #666666);
+        }
+
+        .password-toggle:hover {
+            color: var(--primary-color, #053047);
+            background: rgba(5, 48, 71, 0.1);
+            border-radius: 6px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        .forgot-link {
+            color: var(--primary-color, #053047);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .forgot-link:hover {
+            color: var(--hover-color, #0a2342);
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--primary-color, #053047);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .login-button:hover {
+            background: var(--hover-color, #0a2342);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 48, 71, 0.3);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        /* Reset Password Flow Sections */
+        .reset-section {
+            display: none;
+            background: var(--card-bg, #ffffff);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color, #e1e5e9);
+            transition: all 0.3s ease;
+        }
+
+        .reset-section.active {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color, #053047);
+            margin-bottom: 24px;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--secondary-text, #666666);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .next-button {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--primary-color, #053047);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .next-button:hover {
+            background: var(--hover-color, #0a2342);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 48, 71, 0.3);
+        }
+
+        /* OTP Input Styles */
+        .otp-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 2px solid var(--border-color, #e1e5e9);
+            border-radius: 8px;
+            background: var(--input-bg, #ffffff);
+            color: var(--text-color, #053047);
+            transition: all 0.3s ease;
+        }
+
+        .otp-input:focus {
+            outline: none;
+            border-color: var(--primary-color, #053047);
+            box-shadow: 0 0 0 3px rgba(5, 48, 71, 0.1);
+        }
+
+        .otp-input:hover {
+            border-color: var(--hover-color, #0a2342);
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: var(--primary-color, #053047);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            color: var(--hover-color, #0a2342);
+            text-decoration: underline;
+        }
+
+        .reset-button {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--secondary-color, #6c757d);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .reset-button:hover {
+            background: var(--hover-secondary, #5a6268);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+        }
+
+        /* Dark Mode Variables */
+        :root {
+            --card-bg: #ffffff;
+            --input-bg: #ffffff;
+            --primary-color: #053047;
+            --hover-color: #0a2342;
+            --secondary-color: #6c757d;
+            --hover-secondary: #5a6268;
+        }
+
+        body.dark-mode {
+            --card-bg: white;
+            --input-bg: white;
+            --primary-color: #0a2342;
+            --hover-color: #0a2342;
+            --secondary-color: #666666;
+            --hover-secondary: #555555;
+        }
+
+        body.dark-mode .admin-login-container {
+            background: var(--bg-color, linear-gradient(135deg, #0a0a0a 0%, #053047 100%));
+        }
+
+        body.dark-mode .admin-login-card,
+        body.dark-mode .reset-section {
+            background: var(--card-bg, #1a1a1a);
+            border-color: var(--border-color, #4a5568);
+        }
+
+        body.dark-mode .form-input,
+        body.dark-mode .otp-input {
+            background: var(--input-bg, #2a2a2a);
+            border-color: var(--border-color, #4a5568);
+            color: var(--text-color, #e0e0e0);
+        }
+
+        body.dark-mode .form-input:focus,
+        body.dark-mode .otp-input:focus {
+            border-color: var(--primary-color, #4fc3f7);
+            box-shadow: 0 0 0 3px white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .admin-login-card,
+            .reset-section {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+
+            .admin-title {
+                font-size: 1.8rem;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+            }
+
+            .otp-container {
+                gap: 8px;
+            }
+
+            .otp-input {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .admin-login-container {
+                padding: 10px;
+            }
+
+            .admin-login-card,
+            .reset-section {
+                padding: 25px 15px;
+            }
+
+            .admin-title {
+                font-size: 1.6rem;
+            }
+
+            .step-title {
+                font-size: 1.2rem;
+            }
+
+            .form-input {
+                padding: 10px 14px;
+                font-size: 0.95rem;
+            }
+
+            .login-button,
+            .next-button,
+            .reset-button {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+
+            .otp-container {
+                gap: 6px;
+            }
+
+            .otp-input {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Theme Toggle Integration */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .admin-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--secondary-text, #666666);
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .admin-footer {
+            color: var(--secondary-text, #b0b0b0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <span class="theme-icon">
+            <!-- Moon Icon (Light Mode) -->
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun Icon (Dark Mode) -->
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </span>
+    </button>
+
+    <div class="admin-login-container">
+        <!-- Login Form -->
+        <div id="loginSection" class="admin-login-card">
+            <div class="admin-header">
+                <h1 class="admin-title">Admin Login</h1>
+                <p class="admin-subtitle">KRP Transports</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="form-label">Admin Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        class="form-input" 
+                        placeholder="Enter your admin username"
+                        required
+                        autocomplete="username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button 
+                            type="button" 
+                            class="password-toggle" 
+                            onclick="togglePassword()"
+                            aria-label="Toggle password visibility"
+                        >
+                            <!-- Eye icon (password hidden) -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#" class="forgot-link" onclick="showMobileNumber(event)">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-button">
+                    Sign In
+                </button>
+            </form>
+        </div>
+
+        <!-- Step 1: Mobile Number -->
+        <div id="mobileSection" class="reset-section">
+            <button class="back-button" onclick="backToLogin()">← Back to Login</button>
+            <h2 class="step-title">Reset Password</h2>
+            <p class="step-description">Enter your mobile number to receive OTP</p>
+            
+            <form id="mobileForm">
+                <div class="form-group">
+                    <label for="mobileNumber" class="form-label">Mobile Number</label>
+                    <input 
+                        type="tel" 
+                        id="mobileNumber" 
+                        name="mobileNumber" 
+                        class="form-input" 
+                        placeholder="Enter your mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="next-button">
+                    Next
+                </button>
+            </form>
+        </div>
+
+        <!-- Step 2: OTP Input -->
+        <div id="otpSection" class="reset-section">
+            <button class="back-button" onclick="backToMobile()">← Back</button>
+            <h2 class="step-title">Enter OTP</h2>
+            <p class="step-description">We've sent a 6-digit code to your mobile</p>
+            
+            <form id="otpForm">
+                <div class="otp-container">
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                    <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+                </div>
+
+                <button type="submit" class="next-button">
+                    Verify OTP
+                </button>
+            </form>
+        </div>
+
+        <!-- Step 3: Reset Password -->
+        <div id="resetPasswordSection" class="reset-section">
+            <button class="back-button" onclick="backToOTP()">← Back</button>
+            <h2 class="step-title">Reset Password</h2>
+            <p class="step-description">Enter your new password</p>
+            
+            <form id="resetForm">
+                <div class="form-group">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="newPassword" 
+                            name="newPassword" 
+                            class="form-input" 
+                            placeholder="Enter new password"
+                            required
+                            autocomplete="new-password"
+                        >
+                        <button 
+                            type="button" 
+                            class="password-toggle" 
+                            onclick="toggleNewPassword()"
+                            aria-label="Toggle new password visibility"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            class="form-input" 
+                            placeholder="Confirm new password"
+                            required
+                            autocomplete="new-password"
+                        >
+                        <button 
+                            type="button" 
+                            class="password-toggle" 
+                            onclick="toggleConfirmPassword()"
+                            aria-label="Toggle confirm password visibility"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="reset-button">
+                    Reset Password
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-footer">
+        &copy; 2024 KRP Transports. All rights reserved.
+    </div>
+
+    <script>
+        // Simple Password Toggle Functions
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = passwordInput.nextElementSibling;
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a11 11 0 0 1 11 8 11 11 0 0 1-5.06-2.06z"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                `;
+            }
+        }
+
+        function toggleNewPassword() {
+            const passwordInput = document.getElementById('newPassword');
+            const toggleBtn = passwordInput.nextElementSibling;
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a11 11 0 0 1 11 8 11 11 0 0 1-5.06-2.06z"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                `;
+            }
+        }
+
+        function toggleConfirmPassword() {
+            const passwordInput = document.getElementById('confirmPassword');
+            const toggleBtn = passwordInput.nextElementSibling;
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a11 11 0 0 1 11 8 11 11 0 0 1-5.06-2.06z"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4-8-11-8-11 8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>`
+                ;
+            }
+        }
+
+        // Reset Password Flow Navigation
+        function showMobileNumber(event) {
+            event.preventDefault();
+            const loginSection = document.getElementById('loginSection');
+            const mobileSection = document.getElementById('mobileSection');
+            
+            loginSection.style.display = 'none';
+            mobileSection.classList.add('active');
+        }
+
+        function backToLogin() {
+            const loginSection = document.getElementById('loginSection');
+            const mobileSection = document.getElementById('mobileSection');
+            
+            mobileSection.classList.remove('active');
+            setTimeout(() => {
+                mobileSection.style.display = 'none';
+                loginSection.style.display = 'block';
+            }, 300);
+        }
+
+        function backToMobile() {
+            const mobileSection = document.getElementById('mobileSection');
+            const otpSection = document.getElementById('otpSection');
+            
+            otpSection.classList.remove('active');
+            setTimeout(() => {
+                otpSection.style.display = 'none';
+                mobileSection.style.display = 'block';
+            }, 300);
+        }
+
+        function backToOTP() {
+            const otpSection = document.getElementById('otpSection');
+            const resetSection = document.getElementById('resetPasswordSection');
+            
+            resetSection.classList.remove('active');
+            setTimeout(() => {
+                resetSection.style.display = 'none';
+                otpSection.style.display = 'block';
+            }, 300);
+        }
+
+        // OTP Input Auto-focus
+        document.addEventListener('DOMContentLoaded', function() {
+            const otpInputs = document.querySelectorAll('.otp-input');
+            
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', function(e) {
+                    if (e.target.value.length === 1) {
+                        if (index < otpInputs.length - 1) {
+                            otpInputs[index + 1].focus();
+                        }
+                    }
+                });
+                
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Backspace' && e.target.value === '') {
+                        if (index > 0) {
+                            otpInputs[index - 1].focus();
+                        }
+                    }
+                });
+                
+                // Only allow numbers
+                input.addEventListener('keypress', function(e) {
+                    if (!/[0-9]/.test(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+
+        // Form submission handlers
+        document.getElementById('mobileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const mobileSection = document.getElementById('mobileSection');
+            const otpSection = document.getElementById('otpSection');
+            
+            mobileSection.classList.remove('active');
+            setTimeout(() => {
+                mobileSection.style.display = 'none';
+                otpSection.classList.add('active');
+                // Focus first OTP input
+                document.querySelector('.otp-input').focus();
+            }, 300);
+            
+            console.log('Mobile number submitted:', document.getElementById('mobileNumber').value);
+        });
+
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const otpSection = document.getElementById('otpSection');
+            const resetSection = document.getElementById('resetPasswordSection');
+            
+            // Get OTP values
+            const otpInputs = document.querySelectorAll('.otp-input');
+            const otp = Array.from(otpInputs).map(input => input.value).join('');
+            
+            otpSection.classList.remove('active');
+            setTimeout(() => {
+                otpSection.style.display = 'none';
+                resetSection.classList.add('active');
+            }, 300);
+            
+            console.log('OTP submitted:', otp);
+        });
+
+        document.getElementById('resetForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (newPassword !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            console.log('Password reset successful');
+            alert('Password reset successfully! Redirecting to login...');
+            backToLogin();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            try {
+                const response = await fetch('http://localhost:5000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+
+                    // SAVE LOGIN SESSION
+                    localStorage.setItem("adminLoggedIn", "true");
+                    localStorage.setItem("adminUser", username);
+
+                    alert("Login Successful");
+
+                    window.location.href = "admin-dashboard.html";
+
+                } else {
+                    alert(data.message || "Invalid username or password");
+                }
+
+            } catch (error) {
+                console.log(error);
+                alert("Server not connected");
+            }
+        });
+
+        const sunIcon = document.querySelector('.icon-sun');
+        const body = document.body;
+
+        // Load saved theme or default to light mode
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+        }
+
+        // Theme toggle functionality
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.toggle('dark-mode');
+            
+            // Update icon visibility based on theme
+            if (isDarkMode) {
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+            } else {
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+            }
+            
+            // Save theme preference
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
