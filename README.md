@@ -52,12 +52,12 @@ Future updates will include:
 ## 👥 Team Members
 
 - 👩‍💻 **Abithya** 
-  [GitHub Profile](https://github.com/your-username)
+  [GitHub Profile](https://github.com/ABITHYA)
 
 - 👨‍💻 **Nusarat Khan**  [GitHub Profile](https://github.com/Nusaratkhan)
 
 - 👨‍💻 **Nandini M** 
-  [GitHub Profile](https://github.com/teammate2)
+  [GitHub Profile](https://github.com/NandiniNaiduM)
 ---
 
 ## 📢 Note
